@@ -1,0 +1,19 @@
+{
+  "name": "interview_task",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "no",
+    "keyworkds"
+  ],
+  "author": "myself",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
