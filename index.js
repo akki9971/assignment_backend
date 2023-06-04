@@ -21,6 +21,11 @@ app.get("/", (req, res) => {
 app.get("/movies/list", (req, res) => {
     res.json(moviesList.movies);
 })
+app.get("/movies/:uid", (req, res) => {
+    const uid = req.params.uid
+    const movies = moviesList.movies.filter(movie => movie.uid == uid)
+    res.json(movies);
+})
 app.post("/register", (req, res) => {
     console.log(req.body);
     try {
@@ -91,6 +96,24 @@ app.post("/register", (req, res) => {
     } catch (error) {
         res.status(503).send(error.message)
 
+    }
+})
+
+app.get('/users/list', (req, res)=>{
+    try {
+        fs.readFile('./usersList.json',"utf-8", (err, data)=>{
+            if (err) {
+                return 
+
+            }
+            if(data){
+                // let {users} = data
+                res.send(data)
+            } 
+        })
+    }
+    catch (error){
+        res.status(404).send(error.message)
     }
 })
 
